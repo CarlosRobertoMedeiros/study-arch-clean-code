@@ -1,30 +1,30 @@
-package br.com.roberto.codigoruim;
+package br.com.roberto.codigoruim.funcoes.megasena;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MegaSenaV2 {
+public class MegaSenaV3 {
 
     /**
      * @param numerosApostados
      * @param premioTotal
      * @return
      * @Autor Carlos Roberto
-     * Descrição: Corrigido Pois a Função Está Grande e Complexa, reagrupando as funções
+     * Descrição: Modificando o método isApostaValida utilizando Streams API
      */
     public double calculaPremio(List<Integer> numerosApostados, double premioTotal) {
 
-        if (!isApostaValida(numerosApostados)) return 0.0;
+        if (!isApostaValida(numerosApostados)) return 0.0; //Lançar Exceção
         List<Integer> numerosSorteados = sorteiaSeisNumeros();
         Long qtdeAcertos = calculaAcertos(numerosApostados, numerosSorteados);
 
-        if (qtdeAcertos == 6) {
-            return premioTotal; // 100%
+        if (qtdeAcertos == 6) { //O seis seria uma Constante
+            return premioTotal; // Sena 100%  Enum de Prêmio
         } else if (qtdeAcertos == 5) {
-            return premioTotal * 0.2; // 20%
+            return premioTotal * 0.2; // Quina 20%
         } else if (qtdeAcertos == 4) {
-            return premioTotal * 0.05; // 5%
+            return premioTotal * 0.05; // Quadra 5%
         }
         return 0.0;
     }
@@ -39,6 +39,7 @@ public class MegaSenaV2 {
         return Long.valueOf(acertos);
     }
 
+    //Método Fora do Contexto, deveria estar em outra classe
     private List<Integer> sorteiaSeisNumeros() {
         List<Integer> sorteados = new ArrayList<>();
         int numeroSorteado;
@@ -52,21 +53,10 @@ public class MegaSenaV2 {
     }
 
     private boolean isApostaValida(List<Integer> numerosApostados) {
-        if (numerosApostados.size() < 6 || numerosApostados.size() > 15)
-            return false;
-
-        List<Integer> numerosValidos = new ArrayList<>();
-        for (Integer apostado : numerosApostados) {
-
-            if (apostado < 1 || apostado > 60) {
-                return false; //inválido
-            }
-
-            if (numerosValidos.contains(apostado)) {
-                return false; //repetido
-            }
-            numerosValidos.add(apostado);
-        }
-        return true;
+       return numerosApostados.size()>=6 && numerosApostados.size()<=15 &&
+               numerosApostados.stream()
+                       .distinct()
+                       .filter(n -> n >=1 && n <= 60)
+                       .count() == numerosApostados.size();
     }
 }

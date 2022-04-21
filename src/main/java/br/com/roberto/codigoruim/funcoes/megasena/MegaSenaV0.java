@@ -1,4 +1,4 @@
-package br.com.roberto.codigoruim;
+package br.com.roberto.codigoruim.funcoes.megasena;
 
 import java.util.ArrayList;
 import java.util.List;
