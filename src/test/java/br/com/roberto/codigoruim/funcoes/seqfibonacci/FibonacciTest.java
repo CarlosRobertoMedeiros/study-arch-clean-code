@@ -8,15 +8,25 @@ public class FibonacciTest {
     @Test
     void testFibonacci(){
         Assertions.assertEquals(0, Fibonacci.fib(0));
+		
         Assertions.assertEquals(1, Fibonacci.fib(1));
+		
         Assertions.assertEquals(1, Fibonacci.fib(2));
+		
         Assertions.assertEquals(2, Fibonacci.fib(3));
+		
         Assertions.assertEquals(3, Fibonacci.fib(4));
+		
         Assertions.assertEquals(5, Fibonacci.fib(5));
+		
         Assertions.assertEquals(8, Fibonacci.fib(6));
+		
         Assertions.assertEquals(13, Fibonacci.fib(7));
+		
         Assertions.assertEquals(21, Fibonacci.fib(8));
+		
         Assertions.assertEquals(34, Fibonacci.fib(9));
+		
         Assertions.assertEquals(55, Fibonacci.fib(10));
     }
 
