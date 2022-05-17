@@ -36,4 +36,4 @@ public class Pedido { //estado mutável
         this.itens = itens;
     }
 }
-//Continuar a partir de 15min
+//Continuar a partir de 15 min
