@@ -1,4 +1,4 @@
-package br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.enums;
+package br.com.roberto.codigoruim.funcoes.pedrapapeltesoura;
 
 import java.util.HashMap;
 import java.util.Map;

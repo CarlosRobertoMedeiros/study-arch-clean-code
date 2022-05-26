@@ -1,5 +1,7 @@
 package br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.enums;
 
+import br.com.roberto.codigoruim.funcoes.pedrapapeltesoura.Resultado;
+
 import java.util.HashMap;
 import java.util.Map;
 

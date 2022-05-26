@@ -1,5 +1,6 @@
 package br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.model;
 
+import br.com.roberto.codigoruim.funcoes.pedrapapeltesoura.JogadaLegada;
 import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.enums.Mao;
 import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.enums.ResultadoJogada;
 import org.junit.jupiter.api.Test;

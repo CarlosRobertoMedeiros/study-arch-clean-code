@@ -1,9 +1,9 @@
-package br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.model;
+package br.com.roberto.codigoruim.funcoes.pedrapapeltesoura;
 
 import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.enums.Mao;
-import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.PedraPapelTesoura;
-import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.enums.Resultado;
 import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.enums.ResultadoJogada;
+import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.model.Jogada;
+import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.model.Jogador;
 
 public class JogadaLegada implements Jogada {
 

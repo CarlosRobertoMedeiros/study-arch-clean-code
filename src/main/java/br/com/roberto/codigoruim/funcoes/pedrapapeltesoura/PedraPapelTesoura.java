@@ -1,31 +1,25 @@
 package br.com.roberto.codigoruim.funcoes.pedrapapeltesoura;
 
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 public class PedraPapelTesoura {
 
-    private Escolha escolha;
-    private SituacaoJogo situacaoJogo;
-
-    public SituacaoJogo jogar(Escolha escolhaJogador1, Escolha escolhaJogador2) {
-
-        if (escolhaJogador1.equals(escolhaJogador2)) {
-            return SituacaoJogo.EMPATE;
+    public static int pedraPapelTesoura(char primeiro, char segundo) {
+        List<Character> LETRAS_VALIDAS =  Arrays.asList('R', 'S', 'P');
+        if (!LETRAS_VALIDAS.contains(primeiro)) {
+            throw new IllegalArgumentException("Primeira mão inválida:" + primeiro + ". Use " + LETRAS_VALIDAS);
         }
-
-        /*
-        Assertions.assertEquals(SituacaoJogo.JOGADOR_1_VENCEU,pedraPapelTesoura.jogar(Escolha.PEDRA, Escolha.TESOURA));
-        Assertions.assertEquals(SituacaoJogo.EMPATE,pedraPapelTesoura.jogar(Escolha.TESOURA, Escolha.PAPEL));
-        Assertions.assertEquals(SituacaoJogo.EMPATE,pedraPapelTesoura.jogar(Escolha.PAPEL, Escolha.PEDRA));
-        */
-
-        if ((escolhaJogador1.equals(Escolha.PEDRA) && escolhaJogador2.equals(Escolha.TESOURA))
-                || (escolhaJogador1.equals(Escolha.TESOURA) && escolhaJogador2.equals(Escolha.PAPEL))
-                || (escolhaJogador1.equals(Escolha.PAPEL) && escolhaJogador2.equals(Escolha.PEDRA)))
-            return SituacaoJogo.JOGADOR_1_VENCEU;
-        else
-            return SituacaoJogo.JOGADOR_2_VENCEU;
-
-
+        if (!LETRAS_VALIDAS.contains(segundo)) {
+            throw new IllegalArgumentException("Segunda mão inválida:" + segundo + ". Use " + LETRAS_VALIDAS);
+        }
+        if (primeiro == 'R') {
+            if (segundo == 'P') return 1; else if (segundo == 'S') return -1; else return 0;
+        } else if (primeiro == 'P') {
+            if (segundo == 'S') return 1; else if (segundo == 'R') return -1; else return 0;
+        } else { // S
+            if (segundo == 'R') return 1; else if (segundo == 'P') return -1; else return 0;
+        }
     }
 }

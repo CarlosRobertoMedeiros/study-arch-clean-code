@@ -1,8 +1,6 @@
 package br.com.roberto.codigoruim.funcoes.pedrapapeltesoura;
 
-import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.PedraPapelTesoura;
 import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.enums.Mao;
-import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.enums.Resultado;
 import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.enums.ResultadoJogada;
 
 import java.util.ArrayList;

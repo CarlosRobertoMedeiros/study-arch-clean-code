@@ -2,7 +2,7 @@ package br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo;
 
 import br.com.roberto.codigoruim.funcoes.pedrapapeltesouraoo.model.*;
 
-public class ClassMain {
+public class ProgramaPedraPapelTesouraOOChamador {
 
     public static void main(String[] args) {
         Jogador jogador1 = new Jogador("Carlos Roberto");
