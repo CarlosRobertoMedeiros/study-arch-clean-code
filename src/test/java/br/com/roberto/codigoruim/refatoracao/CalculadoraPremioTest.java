@@ -1,5 +1,6 @@
 package br.com.roberto.codigoruim.refatoracao;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -50,9 +51,33 @@ class CalculadoraPremioTest {
     @Test
     public void deveDarErroPorApostarMenosNumerosQueOMinimo() {
         List<Integer> apostados = Arrays.asList(4, 7, 22, 55, 6); // 5 numeros
-        double premio = calculadoraPremio.calcula(apostados, SORTEADOS, 1000.00);
-        assertEquals(0.00, premio);
+        Assertions.assertThrows(IllegalArgumentException.class, () ->{
+            calculadoraPremio.calcula(apostados, SORTEADOS, 1000.00);
+        });
     }
 
+    @Test
+    public void deveDarErroPorApostarMaisNumerosQueOMaximo() {
+        List<Integer> apostados = Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16); // 16 numeros
+        Assertions.assertThrows(IllegalArgumentException.class, () ->{
+            calculadoraPremio.calcula(apostados, SORTEADOS, 1000.00);
+        });
+    }
+
+    @Test
+    public void deveDarErroPorApostarNumerosForaDaFaixa() {
+        List<Integer> apostados = Arrays.asList(4, 7, 22, 61, 6, 56); // 61 fora da faixa Deixar de usar o IllegalArgumentException e implementar
+        Assertions.assertThrows(IllegalArgumentException.class, () ->{
+            calculadoraPremio.calcula(apostados, SORTEADOS, 1000.00);
+        });
+    }
+
+    @Test
+    public void deveDarErroPorApostarNumerosDuplicados() {
+        List<Integer> apostados = Arrays.asList(4, 6, 22, 27, 6, 56); // 6 número duplicado
+        Assertions.assertThrows(IllegalArgumentException.class, () ->{
+            calculadoraPremio.calcula(apostados, SORTEADOS, 1000.00);
+        });
+    }
 
 }
