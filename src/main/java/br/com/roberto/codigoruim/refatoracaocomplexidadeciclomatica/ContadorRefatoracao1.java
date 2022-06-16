@@ -21,9 +21,7 @@ public class ContadorRefatoracao1 {
 
         if (!isClasseParaContagem(clazz)) return -1;
         List<Field> fields = getCamposDaClasse(clazz);
-
         int count = 0;
-
         for (Field field : fields) {
             if (isConstantesInteiras(field)) {
                 count++;
